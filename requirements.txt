@@ -1,0 +1,21 @@
+# AudioStem-Pro — Extract background music from video (vocals removed)
+# Python 3.9–3.12 recommended (3.13 not yet fully supported by PyTorch)
+
+# Desktop UI
+PyQt6>=6.6.0
+
+# AI source separation (htdemucs 4-stem model)
+demucs>=4.0.0
+torch>=2.0.0
+torchaudio>=2.0.0
+
+# Media: extract audio from video
+ffmpeg-python>=0.2.0
+
+# Audio I/O and mixing (combine stems)
+soundfile>=0.12.0
+numpy>=1.24.0,<2.0.0
+
+# Web UI (browser template)
+flask>=3.0.0
+werkzeug>=3.0.0

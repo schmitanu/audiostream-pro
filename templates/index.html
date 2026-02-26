@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AudioStem-Pro — Extract background music</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎵</text></svg>">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AudioStem-Pro</h1>
+            <p class="subtitle">Extract background music from video (vocals removed)</p>
+        </header>
+
+        <main>
+            <form id="uploadForm" enctype="multipart/form-data">
+                <div class="options-section">
+                    <label for="modelSelect">Model</label>
+                    <select id="modelSelect" name="model_name">
+                        {% for model_id, label in models %}
+                        <option value="{{ model_id }}">{{ label }}</option>
+                        {% endfor %}
+                    </select>
+                    <label for="qualitySelect">Quality</label>
+                    <select id="qualitySelect" name="shifts">
+                        {% for shifts, label in quality_profiles %}
+                        <option value="{{ shifts }}">{{ label }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="upload-section">
+                    <div class="file-upload-area" id="fileUploadArea">
+                        <input type="file" id="fileInput" name="file" accept="video/mp4,video/quicktime,video/x-msvideo,.mp4,.mov,.avi,.mkv,.webm,.m4v">
+                        <div class="upload-content">
+                            <span class="upload-icon">🎬</span>
+                            <p class="upload-text">Drop video here or click to browse</p>
+                            <p class="upload-hint">MP4, MOV, AVI, MKV, WebM, M4V</p>
+                            <p class="file-name" id="fileName"></p>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="submit-btn" id="submitBtn" disabled>
+                    <span class="btn-text">Extract background music</span>
+                    <span class="btn-loader" id="btnLoader" style="display: none;">
+                        <span class="spinner"></span>
+                        Processing…
+                    </span>
+                </button>
+            </form>
+
+            <div id="progressSection" class="progress-section" style="display: none;">
+                <h3>Progress</h3>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <div class="progress-text">
+                        <span id="progressPercentage">0%</span>
+                        <span id="progressMessage" class="progress-message">Initializing…</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="resultSection" class="result-section" style="display: none;">
+                <h3>Done</h3>
+                <p class="result-message">Background music extracted. No vocals.</p>
+                <div class="result-actions">
+                    <a href="#" id="downloadBtn" class="action-btn">Download WAV</a>
+                </div>
+            </div>
+
+            <div id="errorSection" class="error-section" style="display: none;">
+                <h3>Error</h3>
+                <p id="errorMessage"></p>
+            </div>
+        </main>
+
+        <footer>
+            <p>AudioStem-Pro by <a href="https://aiautomationflows.com/" target="_blank" rel="noopener">Eduarth Schmidt</a> · Demucs · FFmpeg · Runs locally</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

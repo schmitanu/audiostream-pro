@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environment
+venv/
+env/
+.venv/
+ENV/
+
+# Project-specific: web uploads & outputs (user data)
+uploads/
+outputs/
+
+# Environment / secrets
+.env
+.env.local
+.env.*.local
+
+# IDE & editor
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build / dist (if you package later)
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Logs & temp
+*.log
+*.tmp
+*.temp
