@@ -4,8 +4,6 @@
 
 A desktop application that extracts **background music** from video files by removing vocals using AI (Demucs **htdemucs** 4-stem model). Output is a single WAV file combining drums, bass, and other stems—no vocals.
 
-Inspired by the UI and structure of the [_Video_Transcribe](../_Video_Transcribe) project in this workspace.
-
 ---
 
 ## Features
