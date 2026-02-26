@@ -61,12 +61,17 @@ All Python dependencies are in `requirements.txt`:
 
 ### 1. Clone or copy the project
 
-Ensure the `AudioStem-Pro` folder is available (e.g. next to `_Video_Transcribe`).
+Clone the repo or download the project to any folder on your machine (no other projects required):
+
+```bash
+git clone https://github.com/schmitanu/audiostream-pro.git
+cd audiostream-pro
+```
 
 ### 2. Create a virtual environment (recommended)
 
 ```bash
-cd AudioStem-Pro
+cd audiostream-pro
 python3 -m venv venv
 source venv/bin/activate   # Windows: venv\Scripts\activate
 ```
