@@ -197,4 +197,3 @@ AudioStem-Pro/
 - **Demucs** — [facebookresearch/demucs](https://github.com/facebookresearch/demucs) (Meta).  
 - **FFmpeg** — [ffmpeg.org](https://ffmpeg.org).  
 - **PyQt6** — [Riverbank Computing](https://www.riverbankcomputing.com/software/pyqt/).  
-- UI and project layout inspired by [_Video_Transcribe](../_Video_Transcribe) in this workspace.
